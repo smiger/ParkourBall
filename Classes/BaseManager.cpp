@@ -15,13 +15,11 @@ bool BaseManager::init(){
 	if (!Node::init()){
 		return false;
 	}
-	//��ȡ�ؿ�
+	//获取当前关卡
 	checkPoint = CCUserDefault::sharedUserDefault()->getIntegerForKey(curCheckPoint, 1);
 
 	createCylinder();
 
-	//��ʱ���� ִ�м�� ִ�д��� �״��ӳ�
-	//this->schedule(schedule_selector(BaseManager::update), 0.9f, kRepeatForever,1.0f);
 	return true;
 }
 void BaseManager::createCylinder(){
@@ -32,7 +30,6 @@ void BaseManager::createCylinder(){
 		cylinder->setVisible(true);
 		cylinder->setPosition(size.width/4 + cylinder->getConSize().width * (i - 1), size.height/2 );
 		if (i > 5){
-			//���ݹؿ����������ɫ
 			int num = 2;
 			switch (checkPoint)
 			{
@@ -80,11 +77,9 @@ void BaseManager::createCylinder(){
 			default:
 				break;
 			}
-			
-			
 		}
 		else{
-			//ǰ5��Ĭ���Ǻ�ɫ
+			//设置为红色
 			cylinder->setCylinderColor(red);
 		}
 		this->addChild(cylinder);
@@ -96,16 +91,16 @@ void BaseManager::update(float dt){
 	auto size = Director::getInstance()->getVisibleSize();
 	Ref * obj = NULL;
 	Cylinder * cylinder = NULL;
-	//��ʧ����Ļ֮����ƶ������
+	//是否移动圆盘
 	if (isMove){
 		for (list<Cylinder*>::iterator iter = cylinderList.begin(); iter != cylinderList.end(); iter++){
 			cylinder = (Cylinder*)*iter;
 			if (cylinder->getPositionX() <= -cylinder->getConSize().width / 2){
-				//�ѵ�һ���ƶ���list�����
+				//如果圆盘已经移出左屏幕外，则移到右边最后面
 				Cylinder *front = cylinder;
 				Cylinder *back = cylinderList.back();
 				front->setPosition(back->getPosition().x + back->getConSize().width, back->getPosition().y);
-				//���������ɫ
+				//重新设置颜色
 				int num = 2;
 				switch (checkPoint)
 				{
@@ -159,7 +154,7 @@ void BaseManager::update(float dt){
 		}
 	}
 	else{
-		//��Ϸͨ�� �������һ����β�ذ�
+		//最后一个设置结束颜色
 		Cylinder *back = cylinderList.back();
 		back->setCylinderColor(endColor);
 	}
@@ -172,7 +167,7 @@ void BaseManager::update(float dt){
 		DelayTime * delay = DelayTime::create(0.1);
 		
 		if (cylinder->getPosition().x == size.width/4){
-			//�ҵ�С������ĵذ�  ���ж������
+			//球碰撞的圆盘上下运动并向左移
 			cylinder->runAction(Sequence::create(moveDown, moveUp, moveBy, NULL));
 		}
 		else {

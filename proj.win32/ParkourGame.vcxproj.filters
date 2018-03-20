@@ -30,9 +30,6 @@
     <ClCompile Include="..\Classes\BaseManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ControlLayer.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Cylinder.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -81,9 +78,6 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Constants.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ControlLayer.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Cylinder.h">

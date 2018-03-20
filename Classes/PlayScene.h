@@ -21,9 +21,9 @@ public:
 	CREATE_FUNC(PlayScene);
 
 private:
-	//���ݹؿ���������
+	//重力
 	int gravity;
-	//�Ƿ�ʼ��Ϸ�ı�־λ
+	//游戏开始标识
 	bool isGameBegin;
 	double total;
 	double time;
@@ -50,29 +50,26 @@ private:
 
 	void onExit();
 
-	//��ײ��ʼ����
+	//碰撞
 	bool onContactBegin(cocos2d::PhysicsContact& contact);
-	//��ײ�Ѿ�����
 	void onContactPostSolve(cocos2d::PhysicsContact& contact);
 
 	void initPhysicWorld();
-	//���ݹؿ���������
+	//播放不同关卡的音乐
 	void playMusicByCheckPoint();
-	//���ݹؿ�������ť
+	//创建控制按钮
 	void createControlBtn();
-	//���ݹؿ������̳�
+	//玩游戏的方法
 	void createPlayWay();
-	//���ݹؿ���������
+	//设置重力
 	void setWorldGravity();
-	//���ݹؿ�����С����ɫ ��Ҫ�ǵڶ�������ɫ��ת���ذ��С����ɫĬ�Ͼ�Ҫ��ͬ��
+	//设置球默认颜色
 	void setBallDefaultColor();
 
 	void pressDown(cocos2d::Ref* pSender);
 
-	//��Ϸ����
 	void GameOver();
 
-	//����ʱ��
 	void addTime(float dt);
 };
 #endif

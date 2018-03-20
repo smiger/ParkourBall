@@ -63,7 +63,7 @@ bool EndLayer::init(){
 	//创建菜单
 	auto *menu = Menu::create();
 	menu->setPosition(zeroPos);
-	//主界面
+	//返回选关主界面
 	auto * menuCheckPoint = MenuItemSprite::create(Sprite::createWithSpriteFrameName("menuNormal.png"), Sprite::createWithSpriteFrameName("menuPress.png")
 		, CC_CALLBACK_1(EndLayer::menu, this));
 	menuCheckPoint->setTag(menuTag);
@@ -114,10 +114,10 @@ bool EndLayer::init(){
 	label->setPosition(Point(spriteCloud->getPosition().x, spriteCloud->getPosition().y - labelTTFCardNumber->getContentSize().height - label->getContentSize().height));
 	this->addChild(label, 2);
 	if (isWin){
-		label->setString("下一关更精彩！");
+		label->setString("The next level is more wonderful");
 	}
 	else{
-		label->setString("就差一点点了！");
+		label->setString("It's a little bit worse.");
 	}
 	return true;
 }

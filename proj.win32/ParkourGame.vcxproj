@@ -154,7 +154,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BaseManager.cpp" />
     <ClCompile Include="..\Classes\Cocos2dx\Common\CCUMSocialSDK.cpp" />
     <ClCompile Include="..\Classes\Cocos2dx\ShareButton\UMShareButton.cpp" />
-    <ClCompile Include="..\Classes\ControlLayer.cpp" />
     <ClCompile Include="..\Classes\Cylinder.cpp" />
     <ClCompile Include="..\Classes\EndLayer.cpp" />
     <ClCompile Include="..\Classes\EndLeave.cpp" />
@@ -174,7 +173,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Cocos2dx\Common\CCUMTypeDef.h" />
     <ClInclude Include="..\Classes\Cocos2dx\ShareButton\UMShareButton.h" />
     <ClInclude Include="..\Classes\Constants.h" />
-    <ClInclude Include="..\Classes\ControlLayer.h" />
     <ClInclude Include="..\Classes\Cylinder.h" />
     <ClInclude Include="..\Classes\EndLayer.h" />
     <ClInclude Include="..\Classes\EndLeave.h" />

@@ -52,7 +52,6 @@ enum CylinderColor{
 #define songTime5 86
 #define songTime6 109
 
-//�ؿ���tag(��iȥ������ �� �˴�û�õ�)
 #define CHECK_POINT_1 1
 #define CHECK_POINT_2 2
 #define CHECK_POINT_3 3

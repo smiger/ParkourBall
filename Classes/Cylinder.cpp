@@ -20,6 +20,7 @@ bool Cylinder::init(){
 
 void Cylinder::initBody(){
 	auto origin = Director::getInstance()->getVisibleOrigin();
+	//创建一个静态的线状刚体
 	auto phyBody = PhysicsBody::createEdgeSegment(origin, Point(getConSize().width, 0), PHYSICSBODY_MATERIAL_DEFAULT, 1);
 	//你可以定义哪些物理刚体相互作用并且你的游戏何时接受这些相互作用的通知
 	phyBody->setCategoryBitmask(0x01);
